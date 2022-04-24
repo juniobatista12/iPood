@@ -5,35 +5,29 @@ void cadastraCliente(vector<Cliente>& clientes){
     string nome, cpf, email, senha;
     cout << "Digite seu nome: ";
     getline(cin, nome);
-    // while(getchar() != '\n');
     cout << "Digite seu CPF: ";
     getline(cin, cpf);
-    // while(getchar() != '\n');
     cout << "Digite seu email: ";
     getline(cin, email);
-    // while(getchar() != '\n');
     cout << "Digite sua senha: ";
     getline(cin, senha);
-    // while(getchar() != '\n');
     clientes.push_back(Cliente(nome, cpf, email, senha));
     cout << "Usuário cadastrado com sucesso" << endl;
 }
 
 void cadastraRestaurante(vector<Restaurante>& restaurantes){
-    string nome, endereco, cnpj, senha;
+    string nome, endereco, setor, cnpj, senha;
     cout << "Digite seu nome: ";
     getline(cin, nome);
-    // while(getchar() != '\n');
     cout << "Digite seu CNPJ: ";
     getline(cin, cnpj);
-    // while(getchar() != '\n');
     cout << "Digite seu endereco: ";
     getline(cin, endereco);
-    // while(getchar() != '\n');
+    cout << "Digite seu setor: ";
+    getline(cin, setor);
     cout << "Digite sua senha: ";
     getline(cin, senha);
-    // while(getchar() != '\n');
-    restaurantes.push_back(Restaurante(nome, cnpj, endereco, senha));
+    restaurantes.push_back(Restaurante(nome, cnpj, endereco, setor, senha));
     cout << "Usuário cadastrado com sucesso" << endl;
 }
 

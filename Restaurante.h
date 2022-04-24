@@ -5,13 +5,13 @@
 #include <vector>
 
 class Restaurante{
-    string nome, cnpj, endereco, senha;
+    string nome, cnpj, endereco, setor, senha;
     vector<Prato> cardapio;
     float reputacao;
     vector<float> avaliacoes;
     void atualizaReputacao();
 public:
-    Restaurante(string nome, string cnpj, string endereco, string senha);
+    Restaurante(string nome, string cnpj, string endereco, string setor, string senha);
     string getNome();
     void setNome(string nome);
     string getCNPJ();
