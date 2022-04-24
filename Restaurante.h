@@ -25,8 +25,10 @@ public:
     bool testSenha(string senha);
     void setSenha(string senha);
     void adicionaAvaliacao(float avaliacao);
+    void addPrato(string prato, string descricao, float preco);
     void printCardapio();
     void addPedido(Cliente cliente, unsigned int id, string endereco);
+    void printPedidos();
     friend ostream& operator<<(ostream& os, const Restaurante& restaurante);
 };
 

@@ -60,6 +60,10 @@ void Restaurante::adicionaAvaliacao(float avaliacao){
     this->atualizaReputacao();
 }
 
+void Restaurante::addPrato(string prato, string descricao, float preco){
+    this->cardapio.push_back(Prato(prato, descricao, preco));
+}
+
 void Restaurante::printCardapio(){
     int i = 0;
     for (auto prato : this->cardapio){
@@ -69,6 +73,13 @@ void Restaurante::printCardapio(){
 
 void Restaurante::addPedido(Cliente cliente, unsigned int id, string endereco){
     this->pedidos.push_back(Pedido(cliente, this->cardapio[id], endereco));
+}
+
+void Restaurante::printPedidos(){
+    int i;
+    for (auto pedido : this->pedidos){
+        cout << "ID: " << i++ << "\t" << pedido << endl;
+    }
 }
 
 ostream& operator<<(ostream& os, const Restaurante& restaurante){

@@ -129,8 +129,34 @@ bool loginRestaurante(vector<Restaurante> restaurantes, Restaurante tmp){
     return false;
 }
 
-void restauranteLogado(Restaurante restaurante){
+void restauranteLogado(Restaurante& restaurante){
     cout << "Restaurante " << restaurante.getNome() << " logado\n";
+    int opt;
+    string nt, dt;
+    float pt;
+    do{
+        cout << "1 - Adicionar prato\n2 - Verificar cardapio\n3 - Verificar pedidos\n0 - Sair\nOpcao: ";
+        cin >> opt;
+        while(getchar() != '\n');
+        switch(opt){
+        case 1:
+            cout << "Digite o nome do prato: ";
+            getline(cin, nt);
+            cout << "Digite uma descricao para o prato: ";
+            getline(cin, dt);
+            cout << "Digite o preco do prato: ";
+            cin >> pt;
+            while(getchar() != '\n');
+            restaurante.addPrato(nt, dt, pt);
+            break;
+        case 2:
+            restaurante.printCardapio();
+            break;
+        case 3:
+            restaurante.printPedidos();
+            break;
+        }
+    }while(opt != 0);
 }
 
 template <typename T>void verificaVetor(vector<T> vetor){
