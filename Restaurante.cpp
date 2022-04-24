@@ -33,6 +33,10 @@ void Restaurante::setEndereco(string endereco){
     this->endereco = endereco;
 }
 
+string Restaurante::getSetor(){
+    return this->setor;
+}
+
 bool Restaurante::testSenha(string senha){
     return this->senha == senha;
 }
@@ -55,6 +59,6 @@ void Restaurante::adicionaAvaliacao(float avaliacao){
 }
 
 ostream& operator<<(ostream& os, const Restaurante& restaurante){
-    os << "Restaurante: " << restaurante.nome << "\tEndereco: " << restaurante.endereco << "\t CNPJ: " << restaurante.cnpj << "\tReputacao: " << restaurante.reputacao << endl;
+    os << "Restaurante: " << restaurante.nome << "\tEndereco: " << restaurante.endereco << "\tSetor:" << restaurante.setor << "\t CNPJ: " << restaurante.cnpj << "\tReputacao: " << restaurante.reputacao << endl;
     return os;
 }

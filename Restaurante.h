@@ -18,6 +18,7 @@ public:
     void setCNPJ(string cnpj);
     string getEndereco();
     void setEndereco(string endereco);
+    string getSetor();
     bool testSenha(string senha);
     void setSenha(string senha);
     void adicionaAvaliacao(float avaliacao);

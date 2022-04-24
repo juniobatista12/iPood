@@ -46,19 +46,36 @@ bool loginCliente(vector<Cliente> clientes, Cliente& tmp){
     return false;
 }
 
+void buscaRestaurante(vector<Restaurante> restaurantes){
+    string setor;
+    int i = 0;
+    cout << "Digite o setor que deseja buscar: ";
+    getline(cin, setor);
+    for (auto restaurante: restaurantes){
+        if(restaurante.getSetor() == setor){
+            cout << "ID: " << i << " ";
+            cout << restaurante << endl;
+        }
+        i++;
+    }
+}
+
 void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
     int opt;
     string tmp;
     cout << "Cliente " << cliente.getNome() << " logado" << endl;
 
     do{
-        cout << "1 - Buscar restaurante por setor\n2 - Trocar senha\n0 - Sair\nOpcao: ";
+        cout << "1 - Buscar restaurante por setor\n2 - Realizar compra em restaurante por ID\n3 - Trocar senha\n0 - Sair\nOpcao: ";
         cin >> opt;
         while(getchar() != '\n');
         switch(opt){
         case 1:
+            buscaRestaurante(restaurantes);
             break;
         case 2:
+            break;
+        case 3:
             getline(cin, tmp);
             cliente.setSenha(tmp);
             break;
@@ -69,6 +86,7 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
 template <typename T>void verificaVetor(vector<T> vetor){
     unsigned int i = 0;
     for (auto item : vetor){
+        cout << "ID: " << i++ << " ";
         cout << item << endl;
     }
 }
