@@ -12,6 +12,7 @@ class Cliente{
     vector<string> enderecos;
     
 public:
+    Cliente();
     Cliente(string nome, string cpf, string email, string senha);
     string getNome();
     void setNome(string nome);

@@ -1,5 +1,9 @@
 #include "Cliente.h"
 
+Cliente::Cliente(){
+    
+}
+
 Cliente::Cliente(string nome, string cpf, string email, string senha){
     this->nome = nome;
     this->cpf = cpf;
