@@ -1,6 +1,7 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -23,6 +24,7 @@ public:
     vector<string> getEndereco();
     void addEndereco(string endereco);
     void removeEndereco(int id);
+    friend ostream& operator<<(ostream& os, const Cliente& cliente);
 };
 
 #endif

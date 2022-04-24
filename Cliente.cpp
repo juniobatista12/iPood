@@ -3,7 +3,7 @@
 Cliente::Cliente(string nome, string cpf, string email, string senha){
     this->nome = nome;
     this->cpf = cpf;
-    this->email = cpf;
+    this->email = email;
     this->senha = senha;
 }
 
@@ -48,4 +48,9 @@ void Cliente::addEndereco(string endereco){
 }
 void Cliente::removeEndereco(int id){
     this->enderecos.erase(this->enderecos.begin() + id);
+}
+
+ostream& operator<<(ostream& os, const Cliente& cliente){
+    os << "Nome: " << cliente.nome << "\tCPF: " << cliente.cpf << "\tEmail: " << cliente.email;
+    return os;
 }
