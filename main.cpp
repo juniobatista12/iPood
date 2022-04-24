@@ -92,7 +92,7 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
     cout << "Cliente " << cliente.getNome() << " logado" << endl;
 
     do{
-        cout << "1 - Buscar restaurante por setor\n2 - Realizar compra em restaurante por ID\n3 - Trocar senha\n0 - Sair\nOpcao: ";
+        cout << "1 - Buscar restaurante por setor\n2 - Realizar compra em restaurante por ID\n3 - Trocar senha\n4 - Adicionar Endereco\n0 - Sair\nOpcao: ";
         cin >> opt;
         while(getchar() != '\n');
         switch(opt){
@@ -105,6 +105,10 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
         case 3:
             getline(cin, tmp);
             cliente.setSenha(tmp);
+            break;
+        case 4:
+            getline(cin, tmp);
+            cliente.addEndereco(tmp);
             break;
         }
     }while(opt != 0);
