@@ -21,7 +21,7 @@ public:
     string getEmail();
     void setEmail(string email);
     bool testSenha(string senha);
-    void setSenha();
+    void setSenha(string senha);
     vector<string> getEndereco();
     void addEndereco(string endereco);
     void removeEndereco(int id);

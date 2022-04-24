@@ -39,7 +39,7 @@ bool Cliente::testSenha(string senha){
     return this->senha == senha;
 }
 
-void Cliente::setSenha(){
+void Cliente::setSenha(string senha){
     this->senha = senha;
 }
 
