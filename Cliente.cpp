@@ -1,0 +1,51 @@
+#include "Cliente.h"
+
+Cliente::Cliente(string nome, string cpf, string email, string senha){
+    this->nome = nome;
+    this->cpf = cpf;
+    this->email = cpf;
+    this->senha = senha;
+}
+
+string Cliente::getNome(){
+    return this->nome;
+}
+
+void Cliente::setNome(string nome){
+    this->nome = nome;
+}
+
+string Cliente::getCPF(){
+    return this->cpf;
+}
+
+void Cliente::setCPF(string cpf){
+    this->cpf = cpf;
+}
+
+string Cliente::getEmail(){
+    return this->email;
+}
+
+void Cliente::setEmail(string email){
+    this->email = email;
+}
+
+bool Cliente::testSenha(string senha){
+    return this->senha == senha;
+}
+
+void Cliente::setSenha(){
+    this->senha = senha;
+}
+
+vector<string> Cliente::getEndereco(){
+    return this->enderecos;
+}
+
+void Cliente::addEndereco(string endereco){
+    this->enderecos.push_back(endereco);
+}
+void Cliente::removeEndereco(int id){
+    this->enderecos.erase(this->enderecos.begin() + id);
+}
