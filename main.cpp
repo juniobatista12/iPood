@@ -196,6 +196,10 @@ int main(){
             if(loginRestaurante(restaurantes, tmpr)){
                 restauranteLogado(tmpr);
             }
+            else{
+                cout << "Erro ao logar\n";
+            }
+            break;
         case 5:
             verificaVetor(clientes);
             break;
