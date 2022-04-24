@@ -23,8 +23,10 @@ public:
     bool testSenha(string senha);
     void setSenha(string senha);
     vector<string> getEndereco();
+    void printEnderecos();
     void addEndereco(string endereco);
     void removeEndereco(int id);
+    string getEnderecoById(int id);
     friend ostream& operator<<(ostream& os, const Cliente& cliente);
 };
 

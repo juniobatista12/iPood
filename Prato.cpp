@@ -1,5 +1,7 @@
 #include "Prato.h"
 
+Prato::Prato(){}
+
 Prato::Prato(string nome, string descricao, float preco){
     this->nome = nome;
     this->descricao = descricao;

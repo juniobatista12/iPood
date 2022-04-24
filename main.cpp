@@ -60,6 +60,32 @@ void buscaRestaurante(vector<Restaurante> restaurantes){
     }
 }
 
+void efetuaCompra(vector<Restaurante>& restaurantes, Cliente cliente){
+    int id1, id2, id3;
+    float avaliacao;
+    cout << "Digite o ID do restaurante desejado: ";
+    cin >> id1;
+    while(getchar() != '\n');
+    if (id1 < restaurantes.size()){
+        restaurantes[id1].printCardapio();
+        cout << "Digite o ID do prato que deseja comprar: ";
+        cin >> id2;
+        while(getchar() != '\n');
+        cliente.printEnderecos();
+        cout << "Digite o ID do endereco que deseja a entrega: ";
+        cin >> id3;
+        while(getchar() != '\n');
+        restaurantes[id1].addPedido(cliente, id2,cliente.getEnderecoById(id3));
+        cout << "Agora avalie o restaurante com uma nota entre 0 e 5: ";
+        cin >> avaliacao;
+        while(getchar() != '\n');
+        restaurantes[id1].adicionaAvaliacao(avaliacao);
+    }
+    else{
+        cout << "ID inválido\n";
+    }
+}
+
 void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
     int opt;
     string tmp;
@@ -74,6 +100,7 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
             buscaRestaurante(restaurantes);
             break;
         case 2:
+            efetuaCompra(restaurantes, cliente);
             break;
         case 3:
             getline(cin, tmp);

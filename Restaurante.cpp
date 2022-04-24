@@ -58,6 +58,17 @@ void Restaurante::adicionaAvaliacao(float avaliacao){
     this->atualizaReputacao();
 }
 
+void Restaurante::printCardapio(){
+    int i = 0;
+    for (auto prato : this->cardapio){
+        cout << "ID: " << i++ << " " << prato << endl;
+    }
+}
+
+void Restaurante::addPedido(Cliente cliente, unsigned int id, string endereco){
+    this->pedidos.push_back(Pedido(cliente, this->cardapio[id], endereco));
+}
+
 ostream& operator<<(ostream& os, const Restaurante& restaurante){
     os << "Restaurante: " << restaurante.nome << "\tEndereco: " << restaurante.endereco << "\tSetor:" << restaurante.setor << "\t CNPJ: " << restaurante.cnpj << "\tReputacao: " << restaurante.reputacao << endl;
     return os;

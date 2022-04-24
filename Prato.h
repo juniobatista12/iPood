@@ -10,6 +10,7 @@ class Prato{
     string nome, descricao;
     float preco;
 public:
+    Prato();
     Prato(string nome, string descricao, float preco);
     string getNome();
     void setNome(string nome);

@@ -47,11 +47,22 @@ vector<string> Cliente::getEndereco(){
     return this->enderecos;
 }
 
+void Cliente::printEnderecos(){
+    int i = 0;
+    for(auto endereco : this->enderecos){
+        cout << "ID: " << i++ << "\tEndereco: " << endereco;
+    }
+}
+
 void Cliente::addEndereco(string endereco){
     this->enderecos.push_back(endereco);
 }
 void Cliente::removeEndereco(int id){
     this->enderecos.erase(this->enderecos.begin() + id);
+}
+
+string Cliente::getEnderecoById(int id){
+    return this->enderecos[id];
 }
 
 ostream& operator<<(ostream& os, const Cliente& cliente){
