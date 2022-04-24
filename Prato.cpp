@@ -32,4 +32,5 @@ void Prato::setPreco(float preco){
 
 ostream& operator<<(ostream& os, const Prato& prato){
     os << "Prato: " << prato.nome << "\nDescricao: " << prato.descricao << "\n\nPreco: " << prato.preco << "\n\n";
+    return os;
 }

@@ -9,6 +9,7 @@ class Restaurante{
     vector<Prato> cardapio;
     float reputacao;
     vector<float> avaliacoes;
+    void atualizaReputacao();
 public:
     Restaurante(string nome, string endereco, string senha);
     string getNome();
@@ -17,6 +18,7 @@ public:
     void setEndereco(string endereco);
     bool testSenha(string senha);
     void setSenha(string senha);
+    void adicionaAvaliacao(float avaliacao);
 };
 
 #endif

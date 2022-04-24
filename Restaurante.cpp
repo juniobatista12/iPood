@@ -29,3 +29,16 @@ bool Restaurante::testSenha(string senha){
 void Restaurante::setSenha(string senha){
     this->senha = senha;
 }
+
+void Restaurante::atualizaReputacao(){
+    float soma = 0;
+    for(float avaliacao : this->avaliacoes){
+        soma += avaliacao;
+    }
+    this->reputacao = soma / this->avaliacoes.size();
+}
+
+void Restaurante::adicionaAvaliacao(float avaliacao){
+    avaliacoes.push_back(avaliacao);
+    this->atualizaReputacao();
+}
