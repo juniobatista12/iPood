@@ -37,9 +37,9 @@ void cadastraRestaurante(vector<Restaurante>& restaurantes){
     cout << "Usuário cadastrado com sucesso" << endl;
 }
 
-void verificaClientes(vector<Cliente> clientes){
-    for (Cliente cliente : clientes){
-        cout << cliente << endl;
+template <typename T> void verificaVetor(vector<T> vetor){
+    for (auto item : vetor){
+        cout << item << endl;
     }
 }
 
@@ -48,7 +48,7 @@ int main(){
     vector<Cliente> clientes;
     vector<Restaurante> restaurantes;
     do{
-        cout << "1 - Cadastrar novo Cliente\n2 - Cadastrar novo Restaurante\n3 - Logar como Cliente\n4 - Logar como Restaurante\n5 - Verificar Clientes\n0 - Sair\n";
+        cout << "1 - Cadastrar novo Cliente\n2 - Cadastrar novo Restaurante\n3 - Logar como Cliente\n4 - Logar como Restaurante\n5 - Verificar Clientes\n6 - Verificar Restaurantes\n0 - Sair\n";
         cin >> opt;
         while(getchar() != '\n');
         switch(opt){
@@ -59,7 +59,10 @@ int main(){
             cadastraRestaurante(restaurantes);
             break;
         case 5:
-            verificaClientes(clientes);
+            verificaVetor(clientes);
+            break;
+        case 6:
+            verificaVetor(restaurantes);
             break;
         }
     }while(opt != 0);

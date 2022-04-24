@@ -5,6 +5,7 @@ Restaurante::Restaurante(string nome, string cnpj, string endereco, string senha
     this->cnpj = cnpj;
     this->endereco = endereco;
     this->senha = senha;
+    this->reputacao = 0;
 }
 
 string Restaurante::getNome(){
@@ -50,4 +51,9 @@ void Restaurante::atualizaReputacao(){
 void Restaurante::adicionaAvaliacao(float avaliacao){
     avaliacoes.push_back(avaliacao);
     this->atualizaReputacao();
+}
+
+ostream& operator<<(ostream& os, const Restaurante& restaurante){
+    os << "Restaurante: " << restaurante.nome << "\tEndereco: " << restaurante.endereco << "\t CNPJ: " << restaurante.cnpj << "\tReputacao: " << restaurante.reputacao << endl;
+    return os;
 }

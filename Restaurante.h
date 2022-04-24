@@ -21,6 +21,7 @@ public:
     bool testSenha(string senha);
     void setSenha(string senha);
     void adicionaAvaliacao(float avaliacao);
+    friend ostream& operator<<(ostream& os, const Restaurante& restaurante);
 };
 
 #endif
