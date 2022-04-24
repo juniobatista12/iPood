@@ -114,6 +114,25 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
     }while(opt != 0);
 }
 
+bool loginRestaurante(vector<Restaurante> restaurantes, Restaurante tmp){
+    string CNPJ, senha;
+    cout << "CNPJ: ";
+    getline(cin, CNPJ);
+    cout << "Senha: ";
+    getline(cin, senha);
+    for(auto restaurante : restaurantes){
+        if (restaurante.getCNPJ() == CNPJ){
+            tmp = restaurante;
+            return restaurante.testSenha(senha);
+        }
+    }
+    return false;
+}
+
+void restauranteLogado(Restaurante restaurante){
+    cout << "Restaurante " << restaurante.getNome() << " logado\n";
+}
+
 template <typename T>void verificaVetor(vector<T> vetor){
     unsigned int i = 0;
     for (auto item : vetor){
@@ -127,7 +146,8 @@ int main(){
     vector<Cliente> clientes;
     vector<Restaurante> restaurantes;
     do{
-        Cliente tmp;
+        Cliente tmpc;
+        Restaurante tmpr;
         cout << "1 - Cadastrar novo Cliente\n2 - Cadastrar novo Restaurante\n3 - Logar como Cliente\n4 - Logar como Restaurante\n5 - Verificar Clientes\n6 - Verificar Restaurantes\n0 - Sair\nOpcao: ";
         cin >> opt;
         while(getchar() != '\n');
@@ -139,13 +159,17 @@ int main(){
             cadastraRestaurante(restaurantes);
             break;
         case 3:
-            if(loginCliente(clientes, tmp)){
-                clienteLogado(restaurantes, tmp);
+            if(loginCliente(clientes, tmpc)){
+                clienteLogado(restaurantes, tmpc);
             }
             else{
                 cout << "Erro ao logar\n";
             }
             break;
+        case 4:
+            if(loginRestaurante(restaurantes, tmpr)){
+                restauranteLogado(tmpr);
+            }
         case 5:
             verificaVetor(clientes);
             break;

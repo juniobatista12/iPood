@@ -1,5 +1,7 @@
 #include "Restaurante.h"
 
+Restaurante::Restaurante(){}
+
 Restaurante::Restaurante(string nome, string cnpj, string endereco, string setor, string senha){
     this->nome = nome;
     this->cnpj = cnpj;

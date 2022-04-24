@@ -13,6 +13,7 @@ class Restaurante{
     vector<Pedido> pedidos;
     void atualizaReputacao();
 public:
+    Restaurante();
     Restaurante(string nome, string cnpj, string endereco, string setor, string senha);
     string getNome();
     void setNome(string nome);
