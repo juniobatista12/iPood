@@ -1,7 +1,8 @@
 #include "Restaurante.h"
 
-Restaurante::Restaurante(string nome, string endereco, string senha){
+Restaurante::Restaurante(string nome, string cnpj, string endereco, string senha){
     this->nome = nome;
+    this->cnpj = cnpj;
     this->endereco = endereco;
     this->senha = senha;
 }
@@ -12,6 +13,14 @@ string Restaurante::getNome(){
 
 void Restaurante::setNome(string nome){
     this->nome = nome;
+}
+
+string Restaurante::getCNPJ(){
+    return this->cnpj;
+}
+
+void Restaurante::setCNPJ(string cnpj){
+    this->cnpj = cnpj;
 }
 
 string Restaurante::getEndereco(){
