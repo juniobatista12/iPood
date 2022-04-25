@@ -86,7 +86,7 @@ void efetuaCompra(vector<Restaurante>& restaurantes, Cliente cliente){
     }
 }
 
-void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
+void clienteLogado(vector<Restaurante>& restaurantes, Cliente& cliente){
     int opt;
     string tmp;
     cout << "Cliente " << cliente.getNome() << " logado" << endl;
@@ -114,23 +114,25 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente cliente){
     }while(opt != 0);
 }
 
-bool loginRestaurante(vector<Restaurante> restaurantes, Restaurante tmp){
+bool loginRestaurante(vector<Restaurante> restaurantes, int& tmp){
     string CNPJ, senha;
     cout << "CNPJ: ";
     getline(cin, CNPJ);
     cout << "Senha: ";
     getline(cin, senha);
+    int i = 0;
     for(auto restaurante : restaurantes){
         if (restaurante.getCNPJ() == CNPJ){
-            tmp = restaurante;
+            tmp = i;
             return restaurante.testSenha(senha);
         }
+        i++;
     }
     return false;
 }
 
-void restauranteLogado(Restaurante& restaurante){
-    cout << "Restaurante " << restaurante.getNome() << " logado\n";
+void restauranteLogado(vector<Restaurante>& restaurantes, int id){
+    cout << "Restaurante " << restaurantes[id].getNome() << " logado\n";
     int opt;
     string nt, dt;
     float pt;
@@ -147,13 +149,13 @@ void restauranteLogado(Restaurante& restaurante){
             cout << "Digite o preco do prato: ";
             cin >> pt;
             while(getchar() != '\n');
-            restaurante.addPrato(nt, dt, pt);
+            restaurantes[id].addPrato(nt, dt, pt);
             break;
         case 2:
-            restaurante.printCardapio();
+            restaurantes[id].printCardapio();
             break;
         case 3:
-            restaurante.printPedidos();
+            restaurantes[id].printPedidos();
             break;
         }
     }while(opt != 0);
@@ -173,7 +175,7 @@ int main(){
     vector<Restaurante> restaurantes;
     do{
         Cliente tmpc;
-        Restaurante tmpr;
+        int tmpr;
         cout << "1 - Cadastrar novo Cliente\n2 - Cadastrar novo Restaurante\n3 - Logar como Cliente\n4 - Logar como Restaurante\n5 - Verificar Clientes\n6 - Verificar Restaurantes\n0 - Sair\nOpcao: ";
         cin >> opt;
         while(getchar() != '\n');
@@ -194,7 +196,7 @@ int main(){
             break;
         case 4:
             if(loginRestaurante(restaurantes, tmpr)){
-                restauranteLogado(tmpr);
+                restauranteLogado(restaurantes, tmpr);
             }
             else{
                 cout << "Erro ao logar\n";
