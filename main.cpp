@@ -12,7 +12,7 @@ void cadastraCliente(vector<Cliente>& clientes){
     cout << "Digite sua senha: ";
     getline(cin, senha);
     clientes.push_back(Cliente(nome, cpf, email, senha));
-    cout << "Usuário cadastrado com sucesso" << endl;
+    cout << "Usuario cadastrado com sucesso" << endl;
 }
 
 void cadastraRestaurante(vector<Restaurante>& restaurantes){
@@ -28,7 +28,7 @@ void cadastraRestaurante(vector<Restaurante>& restaurantes){
     cout << "Digite sua senha: ";
     getline(cin, senha);
     restaurantes.push_back(Restaurante(nome, cnpj, endereco, setor, senha));
-    cout << "Usuário cadastrado com sucesso" << endl;
+    cout << "Restaurante cadastrado com sucesso" << endl;
 }
 
 bool loginCliente(vector<Cliente> clientes, Cliente& tmp){
@@ -72,6 +72,7 @@ void efetuaCompra(vector<Restaurante>& restaurantes, Cliente cliente){
         cin >> id2;
         while(getchar() != '\n');
         cliente.printEnderecos();
+        cout << endl << endl;
         cout << "Digite o ID do endereco que deseja a entrega: ";
         cin >> id3;
         while(getchar() != '\n');
@@ -82,7 +83,7 @@ void efetuaCompra(vector<Restaurante>& restaurantes, Cliente cliente){
         restaurantes[id1].adicionaAvaliacao(avaliacao);
     }
     else{
-        cout << "ID inválido\n";
+        cout << "ID invalido\n";
     }
 }
 
