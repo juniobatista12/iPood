@@ -1,6 +1,8 @@
 #include "Cliente.h"
 #include "Restaurante.h"
 
+#include <fstream>
+
 void cadastraCliente(vector<Cliente>& clientes){
     string nome, cpf, email, senha;
     cout << "Digite seu nome: ";
@@ -104,10 +106,12 @@ void clienteLogado(vector<Restaurante>& restaurantes, Cliente& cliente){
             efetuaCompra(restaurantes, cliente);
             break;
         case 3:
+            cout << "Digite a nova senha: ";
             getline(cin, tmp);
             cliente.setSenha(tmp);
             break;
         case 4:
+            cout << "Digite o endereco a ser inserido: ";
             getline(cin, tmp);
             cliente.addEndereco(tmp);
             break;
